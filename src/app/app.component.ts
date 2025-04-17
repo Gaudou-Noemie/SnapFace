@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       'Tellement réconfortant un petit déjeuné au chaud !',
       new Date(),
       29
-    )
+    );
 
     this.myAnimal = new FaceSnap(
       'Mon bébé chien d\'amour',
@@ -53,8 +53,6 @@ export class AppComponent implements OnInit {
       'Mon adorable bébé chien avec son petit pull !',
       new Date(),
       58
-    )
-
-    
+    );
   }
 }
