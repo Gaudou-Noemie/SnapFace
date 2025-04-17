@@ -1,4 +1,9 @@
-<h2>{{title}}</h2>
-<p>{{description}}</p>
-<p>FaceSnap créée le {{createdAt}}</p>
-<p>👍 {{snaps}}</p>
+<div class="face-snap-card">
+<h2 class="face-snap-card__title">{{faceSnap.title}}</h2>
+<img [src]="faceSnap.imageUrl" [alt]="faceSnap.title">
+<p>{{faceSnap.description}}</p>
+<p>FaceSnap créée le {{faceSnap.createdAt}}</p>
+<p>
+<button (click)="onSnap()">{{snapButtonText}}</button>
+❤️ {{faceSnap.snaps}}</p>
+</div>
