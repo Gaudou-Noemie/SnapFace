@@ -1,5 +1,6 @@
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
-<app-face-snap [faceSnap]="myOtherSnap"></app-face-snap>
-<app-face-snap [faceSnap]="myLastSnap"></app-face-snap>
-<app-face-snap [faceSnap]="myMorning"></app-face-snap>
-<app-face-snap [faceSnap]="myAnimal"></app-face-snap>
+@for (faceSnap of faceSnaps; track faceSnap.title) {
+    <app-face-snap [faceSnap]="faceSnap"/>
+}
+
+
+
