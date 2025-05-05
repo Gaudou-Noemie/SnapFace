@@ -2,7 +2,7 @@ import { SnapType } from './snap-type.type';
 export class FaceSnap {
   location?: string;
   id: string;
-createdDate: string | number | Date | undefined;
+
 
   constructor(
     public title: string,
