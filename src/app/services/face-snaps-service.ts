@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { map, Observable, switchMap } from 'rxjs';
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap";
 import { SnapType } from "../models/snap-type.type";
@@ -11,33 +11,41 @@ export class FaceSnapsService {
 
   constructor(private http: HttpClient) {}
 
-    faceSnaps: FaceSnap[] = [];
-
     getAllFaceSnaps(): Observable<FaceSnap[]>{
         return this.http.get<FaceSnap[]>('http://localhost:3000/facesnaps');
     }
+
     
-    getFaceSnapById(faceSnapId: number): Observable<FaceSnap> {
+    getFaceSnapById(faceSnapId: string): Observable<FaceSnap> {
     return this.http.get<FaceSnap>(`http://localhost:3000/facesnaps/${faceSnapId}`)
     }
-    snapFaceSnapById(faceSnapId: string, snapType: SnapType): void {
-        // const faceSnap = this.getFaceSnapById(faceSnapId);
-        // faceSnap.snap(snapType);
+
+    snapFaceSnapById(faceSnapId: string, snapType: 'snap' | 'unsnap'): Observable<FaceSnap> { 
+      return this.getFaceSnapById(faceSnapId).pipe(
+        map(faceSnap => ({
+          ...faceSnap,
+          snaps: faceSnap.snaps + (snapType === 'snap' ? 1 : -1)
+        })),
+        switchMap(updatedFaceSnap => this.http.put<FaceSnap>(
+          `http://localhost:3000/facesnaps/${faceSnapId}`,
+          updatedFaceSnap)
+        )
+      );
     }
 
     addFaceSnap(formValue: { title: string; description: string; imageUrl: string; location?: string }): void {
-      const newFaceSnap = new FaceSnap(
-        formValue.title,
-        formValue.imageUrl,
-        formValue.description,
-        new Date(),
-        0
-      );
+      // const newFaceSnap = new FaceSnap(
+      //   formValue.title,
+      //   formValue.imageUrl,
+      //   formValue.description,
+      //   new Date(),
+      //   0
+      // );
     
-      if (formValue.location) {
-        newFaceSnap.setLocation(formValue.location);
-      }
+      // if (formValue.location) {
+      //   newFaceSnap.setLocation(formValue.location);
+      // }
     
-      this.faceSnaps.push(newFaceSnap);
+      // this.faceSnaps.push(newFaceSnap);
     }
 }
