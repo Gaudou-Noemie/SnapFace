@@ -1,5 +1,6 @@
 .landing-block {
     position: absolute;
+    margin: 50px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -9,6 +10,19 @@
     width: 100%;
     text-align: center;
   }
+  form {
+    margin: 20px;
+  }
   button {
     font-size: 18px;
+    border-radius: 8px;
+  }
+  .divImg{
+    width: 800px;
+    border-radius: 20px;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
   }
