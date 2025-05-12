@@ -5,6 +5,13 @@
   width: 100%;
   padding: 50px 20px;
   gap: 30px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    gap: 0;
+    align-items: center;
+    padding: 2px;
+  }
 }
 
 /* Bloc avec image de fond centrée */
@@ -23,6 +30,11 @@
   text-align: center;
   font-family: "Montserrat", sans-serif;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+    width: auto;
+  }
 }
 
 /* Voile sombre par-dessus l’image */
@@ -33,6 +45,9 @@
   background-color: rgba(252, 249, 249, 0.459);
   z-index: 0;
   border-radius: 15px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 /* Texte au-dessus du voile */
@@ -41,20 +56,27 @@
   z-index: 1;
   font-size: 24px;
   margin: 0;
+
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 }
 
 .landing-links {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
+}
+form {
+  margin: 20px;
+  padding: 30px;
+  font-size: 15px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
   }
-  form {
-    margin: 20px;
-    padding: 30px;
-    font-size: 15px;
-  }
-  button {
-    font-size: 10px;
-    padding: 5px;
-    margin: 0 2px ;
-    border-radius: 3px;
-  }
+}
+button {
+  font-size: 10px;
+  padding: 5px;
+  margin: 0 2px;
+  border-radius: 3px;
+}

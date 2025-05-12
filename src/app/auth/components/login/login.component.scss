@@ -1,9 +1,16 @@
 .form-card {
   box-sizing: border-box;
-  width: 50%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin: 20px auto;
-  padding: 10px 30px;
   box-shadow: lightgray 4px 4px 20px;
+
+  @media screen and (max-width: 320px) {
+    width: 100%;
+    margin: 10px;
+  }
 }
 
 .form-group {
@@ -14,7 +21,8 @@
   justify-content: space-between;
 }
 
-input, textarea {
+input,
+textarea {
   width: 50%;
 }
 
