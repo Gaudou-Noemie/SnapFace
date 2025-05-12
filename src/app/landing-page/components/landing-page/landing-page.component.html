@@ -1,13 +1,13 @@
 <div class="landing-block">
-    <div class="divImg"><img src="/assets/snapface.jpg" alt="Snapface logo"> </div>
-    <div class="landing-links">
+  <div class="text-with-bg">
+    <p>Bienvenue sur SnapFace, l’application où chaque instant compte ! Publie des photos, découvre les posts de tes amis, commente, like et construis ta propre communauté. Que ce soit un selfie du jour, un moment fun ou un souvenir marquant, SnapFace te permet de l’immortaliser et de le partager facilement.</p>
+  </div>
 
-      <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+   <div class="landing-links">    
+     <form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
         <label for="emailInput">Inscrivez-vous pour recevoir notre newsletter ! </label>
         <input type="email" id="emailInput" [(ngModel)]="userEmail" name="userEmail">
         <button type="submit">OK !</button>
       </form>
-      
-      <button (click)="onContinue()">Continuer vers Snapface</button>
     </div>
-  </div>
+</div>

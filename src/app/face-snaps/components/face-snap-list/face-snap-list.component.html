@@ -1,6 +1,7 @@
 
 <div *ngIf="faceSnaps$ | async as faceSnaps; else loading">
     <app-face-snap *ngFor="let faceSnap of faceSnaps" [faceSnap]="faceSnap"></app-face-snap>
+    
   </div>
   
   <ng-template #loading>Chargement...</ng-template>

@@ -1,35 +1,46 @@
 header{
     text-align: center;
-    background-color:#EEE;
-    margin-bottom: 20px;
+    width: 100%;
     padding: 10px;
-    font-weight: 700;
+    background-color: #52bde72a;
+    height: 200px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
 }
 h1 {
-    text-align: left;
-    font-size: 38px;
+    text-align: center;
+    font-size: 80px;
     font-style: italic;
     width: 500px;
-    color: #666;
+    position: relative;
+    z-index: 3;
+    color: #52bde7;
 }
+
 a {
-    margin: 0 10px;
-    color: #333333af;
+    margin: 30px;
+    color:#52bde7;
     text-decoration: none;
+    position: relative;
     font-size: 25px;
-    padding: 0 50px;
+    z-index: 3;
+    padding: 10px;
     &:hover {
-        text-decoration: underline;
+        color: #068bc0;
     }
 }
 button{
     margin: 10px;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #52bde7;
     padding: 8px;
 }
 
 .active {
-    color: #666;
-    text-decoration: underline;
+    color:#034661;
+    text-decoration: none;
 }

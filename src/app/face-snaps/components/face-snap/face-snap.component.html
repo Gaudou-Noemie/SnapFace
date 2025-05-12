@@ -1,4 +1,6 @@
 <div class="face-snap-card">
 <h2>{{faceSnap.title | uppercase }}</h2>
+<div class="image"><img [src]="faceSnap.imageUrl" [alt]="faceSnap.title"></div>
+
 <button (click)="onViewFaceSnap()">VIEW</button>
 </div>

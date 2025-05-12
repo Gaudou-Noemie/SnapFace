@@ -1,6 +1,6 @@
 <div class="face-snap-card" *ngIf="faceSnap$ |async as faceSnap" [ngClass]="{ snapped: userHasSnapped }">
 <h2>{{faceSnap.title | uppercase }}</h2>
-<a routerLink="/facesnaps">BACK</a>
+<button class="buttonBack" routerLink="/facesnaps">BACK</button>
 @if (faceSnap.location){
     <p>Localisation : {{faceSnap.location}}</p>
 } @else {
