@@ -58,4 +58,15 @@ export class SingleFaceSnapComponent implements OnInit {
     this.faceSnap$ = this.faceSnapsService.getFaceSnapById(faceSnapId);
   }
 
+  deleteSnapFace(): void {
+    const faceSnapId = this.route.snapshot.params['id'];
+    this.faceSnapsService.deleteSnapFace(faceSnapId).subscribe({
+      next: () => {
+        console.log('Facesnap supprimé');
+      },
+      error: (err) => {
+        console.error('Erreur lors de la suppression:', err)
+      }
+    });
+  }
 }

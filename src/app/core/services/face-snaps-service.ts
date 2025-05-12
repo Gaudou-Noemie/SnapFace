@@ -1,7 +1,6 @@
 import { map, Observable, switchMap } from 'rxjs';
 import { Injectable } from "@angular/core";
 import { FaceSnap } from "../models/face-snap";
-import { SnapType } from "../models/snap-type.type";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
@@ -48,5 +47,11 @@ export class FaceSnapsService {
               newFacesnap)
           )
       );
+    }
+
+
+    deleteSnapFace(faceSnapId: number): Observable<any> {
+      return this.http.delete(`http://localhost:3000/facesnaps/${faceSnapId}`);
+      ;
     }
 }
